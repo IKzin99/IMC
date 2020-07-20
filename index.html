@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Exercicio 4</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css
+    ">
+</head>
+
+<body>
+    <form class="form">
+        <div class="card">
+            <div class="card-top">
+                <h2>Cadastro</h2>
+            </div>
+            <div class="card-group">
+                <label class="altura">Altura:</label>
+                <input id="input-altura" type="text" placeholder="Ex:1.60" />
+            </div>
+            <div class="card-group">
+                <label class="peso">Peso:</label>
+                <input id="input-peso" type="text" placeholder="Ex:60.8" />
+                <div class="card-group">
+                    <button type="reset">Limpar</button>
+                    <button type="button" onclick="guardar()">Calculo</button>
+                </div>
+                <br>
+                <div class="card-group">
+                    <input type="number" id="IMC" placeholder="IMC😂" readonly />
+                </div>
+                <br>
+                <table>
+                    <tbody>
+                        <tr class="indice">
+                            <td class="indice">IMC</td>
+                            <td class="indice">Classificacao</td>
+                            <td class="indice">Obesidade</td>
+                        </tr>
+                        <tr>
+                            <td class="conteudo"> Menor que 18.5</td>
+                            <td class="conteudo">Magreza</td>
+                            <td class="conteudo">0</td>
+                        </tr>
+                        <tr>
+                            <td class="conteudo"> Entre 18.5 e 24.9</td>
+                            <td class="conteudo">Normal</td>
+                            <td class="conteudo">0</td>
+                        </tr>
+                        <tr>
+                            <td class="conteudo"> Entre 25 e 29.9</td>
+                            <td class="conteudo">Sobrepeso</td>
+                            <td class="conteudo">I</td>
+                        </tr>
+                        <tr>
+                            <td class="conteudo"> Entre 30 e 39.9</td>
+                            <td class="conteudo">Obesidade</td>
+                            <td class="conteudo">II</td>
+                        </tr>
+                        <tr>
+                            <td class="conteudo"> Maior que 40</td>
+                            <td class="conteudo">Obesidade grave</td>
+                            <td class="conteudo">III</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </form>
+
+    <script>
+        function guardar() {
+            let altura = parseFloat(document.getElementById('input-altura').value);
+            let style1 = document.getElementById('input-altura');
+            let peso = parseFloat(document.getElementById('input-peso').value);
+            let style2 = document.getElementById('input-peso');
+            let IMC = 0;
+            let errou = document.getElementById('errou');
+            console.log(altura, peso);
+            try {
+                if (isNaN(altura) || isNaN(peso)) {
+
+                    if (isNaN(altura)) {
+                        document.getElementById("errou").style.display = "block";
+                        document.getElementById("errou").style.backgroundColor = "red";
+                        document.getElementById("input-altura").style.borderColor = "red"
+                        setTimeout(() => { style1.style = "border: 2px solid rgba(0, 0, 0, 0.726);" }, 1000);
+                        setTimeout(() => { errou.style = "display:none;" }, 1000);
+                    }
+                    if (isNaN(peso)) {
+                        document.getElementById("errou").style.display = "block";
+                        document.getElementById("errou").style.backgroundColor = "red";
+                        document.getElementById("input-peso").style.borderColor = "red"
+                        setTimeout(() => { style2.style = "border: 2px solid rgba(0, 0, 0, 0.726);" }, 1000);
+                        setTimeout(() => { errou.style = "display:none;" }, 1000);
+                    }
+                } else {
+                    IMC = peso / (altura * altura);
+                    document.getElementById("errou").style.display = "block";
+                    document.getElementById("errou").style.backgroundColor = "green";
+                    document.getElementById("input-altura").style.borderColor = "green";
+                    setTimeout(() => { style1.style = "border: 2px solid rgba(0, 0, 0, 0.726);" }, 1000);
+                    document.getElementById("input-peso").style.borderColor = "green";
+                    setTimeout(() => { style2.style = "border: 2px solid rgba(0, 0, 0, 0.726);" }, 1000);
+                    setTimeout(() => { errou.style = "display:none;" }, 1000);
+                }
+            } catch (error) {
+                alert("Arruma ai");
+            }
+            document.getElementById('IMC').value = IMC;
+        }
+    </script>
+    <div class="erro" id="errou" style=display:none>
+    </div>
+</body>
+
+</html>
