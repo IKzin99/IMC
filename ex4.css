@@ -1,0 +1,79 @@
+body{
+    background-color: #f0f0f0;
+    }
+    .form{
+        width: 400px;
+        margin: auto;
+        border: 5px solid blue;
+        border-radius: 10px;
+    }
+    .card{
+    box-shadow: 1px 1px 5px #ccc;
+    background-color: white;
+    padding:30px;
+    border-radius: 5px;
+    }
+    .altura{
+        font-size: 20px
+    }
+    .peso{
+        font-size: 20px
+    }
+    .IMC{
+        text-align:center;
+        border: 3px solid #2E184A;
+        border-radius: 10px;
+        font-size: x-large;
+    }
+    .card-top{
+        text-align: center;
+    }
+    
+    .card-group >label{
+        width: 100%;
+        color: black;
+        display: block;
+    }
+    .card-group> input{
+        border-radius: 5px;
+        outline: 0;
+        width: 100%;
+        height: 25px;
+        padding: 5px;
+        border: 2px solid rgba(0, 0, 0, 0.726);
+        transition: ease-in-out 0.25s all;
+    }
+    .card-group> input:hover{
+        background-color: #d8d8d8;
+    }
+    .card-group> button{
+        background-color:#2abbeb;
+        border:#2abbeb ;
+        width: 35%;
+        border-radius: 30px;
+        padding: 15px;
+        color:black;
+    }
+    .card-group> button:hover{  
+        cursor: pointer;
+        }
+    .card-group> button:focus{  
+    outline:0;
+    }
+    .indice{
+        border: 4px solid #4F10B0;
+        border-radius: 5px;
+        background-color: #4F10B0;
+        color:white;
+    }
+    .conteudo{
+        padding:8px;
+    }
+    .erro{
+        border:2px solid black;
+        width: 200px;
+        height: 100px;
+        float: right;
+        margin-bottom: 700px;
+       }
+    
