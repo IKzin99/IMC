@@ -28,7 +28,7 @@
                 </div>
                 <br>
                 <div class="card-group">
-                    <input type="number" id="IMC" placeholder="IMC😂" readonly />
+                    <input type="number" id="IMC" placeholder="IMC" readonly />
                 </div>
                 <br>
                 <table>
@@ -84,15 +84,13 @@
                         document.getElementById("errou").style.display = "block";
                         document.getElementById("errou").style.backgroundColor = "red";
                         document.getElementById("input-altura").style.borderColor = "red"
-                        setTimeout(() => { style1.style = "border: 2px solid rgba(0, 0, 0, 0.726);" }, 1000);
-                        setTimeout(() => { errou.style = "display:none;" }, 1000);
+                        setTimeout(() => { style1.style = "border: 2px solid rgba(0, 0, 0, 0.726);", errou.style = "display:none;" }, 1000);
                     }
                     if (isNaN(peso)) {
                         document.getElementById("errou").style.display = "block";
                         document.getElementById("errou").style.backgroundColor = "red";
                         document.getElementById("input-peso").style.borderColor = "red"
-                        setTimeout(() => { style2.style = "border: 2px solid rgba(0, 0, 0, 0.726);" }, 1000);
-                        setTimeout(() => { errou.style = "display:none;" }, 1000);
+                        setTimeout(() => { style2.style = "border: 2px solid rgba(0, 0, 0, 0.726);", errou.style = "display:none;" }, 1000);
                     }
                 } else {
                     IMC = peso / (altura * altura);
@@ -101,13 +99,12 @@
                     document.getElementById("input-altura").style.borderColor = "green";
                     setTimeout(() => { style1.style = "border: 2px solid rgba(0, 0, 0, 0.726);" }, 1000);
                     document.getElementById("input-peso").style.borderColor = "green";
-                    setTimeout(() => { style2.style = "border: 2px solid rgba(0, 0, 0, 0.726);" }, 1000);
-                    setTimeout(() => { errou.style = "display:none;" }, 1000);
+                    setTimeout(() => { style2.style = "border: 2px solid rgba(0, 0, 0, 0.726);", errou.style = "display:none;" }, 1000);
                 }
             } catch (error) {
                 alert("Arruma ai");
             }
-            document.getElementById('IMC').value = IMC;
+            document.getElementById('IMC').value = IMC.toFixed(2);
         }
     </script>
     <div class="erro" id="errou" style=display:none>

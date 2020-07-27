@@ -26,6 +26,9 @@ body{
         border-radius: 10px;
         font-size: x-large;
     }
+    .IMC::placeholder{
+        margin-left: 50px;
+    }
     .card-top{
         text-align: center;
     }
